@@ -1,0 +1,21 @@
+{
+  "name": "calm-flox",
+  "version": "1.0.0",
+  "description": "A Flox environment for building and packaging the FINOS CALM CLI.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yt-ms/calm-flox.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/yt-ms/calm-flox/issues"
+  },
+  "homepage": "https://github.com/yt-ms/calm-flox#readme"
+}
