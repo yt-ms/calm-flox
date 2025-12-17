@@ -1,0 +1,27 @@
+# Flox manifest version managed by Flox CLI
+version = 1
+
+[install]
+nodejs_24.pkg-path = "nodejs_24"
+
+[build.deps]
+command = '''
+  npm install @finos/calm-cli
+  npm prune
+  mkdir -p $out/bin
+  cp -r ./node_modules $out/
+  cp ./node_modules/.bin/calm $out/bin
+  $out/bin/calm --version > $out/version.txt   # Capture the current package version
+'''
+
+[build.calm-cli]
+# version.file = "${deps}/version.txt"   # Try to use the captured version - this reports "No such file or directory"
+description = "FINOS Common Architecture Language Model CLI"
+command = """
+  cat ${deps}/version.txt    # This outputs the correct version number
+  mkdir -p $out/bin
+  cp -r ${deps}/bin/calm $out/bin/
+  cp -r ${deps}/node_modules $out/
+  find $out -type d -exec chmod +w {} ';'
+"""
+sandbox = "pure"
