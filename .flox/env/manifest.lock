@@ -10,12 +10,15 @@
     "options": {},
     "build": {
       "calm-cli": {
-        "command": "  cat ${deps}/version.txt    # This outputs the correct version number\n  mkdir -p $out/bin\n  cp -r ${deps}/bin/calm $out/bin/\n  cp -r ${deps}/node_modules $out/\n  find $out -type d -exec chmod +w {} ';'\n",
+        "command": "  mkdir -p $out/bin\n  cp -r ${deps}/bin/calm $out/bin/\n  cp -r ${deps}/node_modules $out/\n  find $out -type d -exec chmod +w {} ';'\n",
         "sandbox": "pure",
+        "version": {
+          "file": "./version.txt"
+        },
         "description": "FINOS Common Architecture Language Model CLI"
       },
       "deps": {
-        "command": "  npm install @finos/calm-cli\n  npm prune\n  mkdir -p $out/bin\n  cp -r ./node_modules $out/\n  cp ./node_modules/.bin/calm $out/bin\n  $out/bin/calm --version > $out/version.txt   # Capture the current package version\n"
+        "command": "  npm install @finos/calm-cli\n  npm prune\n  mkdir -p $out/bin\n  cp -r ./node_modules $out/\n  cp ./node_modules/.bin/calm $out/bin\n"
       }
     }
   },
