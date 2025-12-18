@@ -18,7 +18,7 @@ This project packages the [FINOS CALM CLI](https://github.com/finos/calm) (Commo
 flox activate
 ```
 
-### Build the packages
+### Build the package
 
 ```bash
 # Build all packages
@@ -31,10 +31,22 @@ flox build
 ./result-calm-cli/bin/calm --help
 ```
 
-## Packages
+### Publish the package
 
-- **deps** - Node.js dependencies for FINOS CALM CLI
-- **calm-cli** - FINOS CALM CLI - Common Architecture Language Models
+Assumes you have a FloxHub account.
+
+```bash
+flox publish calm-cli
+```
+
+### Using the build package after publishing
+
+From a clean and activated Flox environment:
+
+```bash
+flox install [your-flox-username]/calm-cli
+calm --version
+```
 
 ## License
 
