@@ -13,7 +13,7 @@
         "command": "  mkdir -p $out/bin\n  cp -r ${deps}/bin/calm $out/bin/\n  cp -r ${deps}/node_modules $out/\n  find $out -type d -exec chmod +w {} ';'\n",
         "sandbox": "pure",
         "version": {
-          "file": "./version.txt"
+          "command": "npm install @finos/calm-cli > /dev/null 2>&1 && npx calm --version"
         },
         "description": "FINOS Common Architecture Language Model CLI"
       },

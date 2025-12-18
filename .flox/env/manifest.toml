@@ -14,7 +14,7 @@ command = '''
 '''
 
 [build.calm-cli]
-version.file = "./version.txt"
+version.command = "npm install @finos/calm-cli > /dev/null 2>&1 && npx calm --version"
 description = "FINOS Common Architecture Language Model CLI"
 command = """
   mkdir -p $out/bin
